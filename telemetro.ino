@@ -1,27 +1,10 @@
-/*
-  Ping))) Sensor
 
-  This sketch reads a PING))) ultrasonic
-  rangefinder and returns the distance to the
-  closest object in range. To do this, it sends a
-  pulse to the sensor to initiate a reading, then
-  listens for a pulse to return.  The length of
-  the returning pulse is proportional to the
-  distance of the object from the sensor.
-
-  The circuit:
-   * +V connection of the PING))) attached to +5V
-   * GND connection attached to ground
-   * SIG connection attached to digital pin 7
-
-  http://www.arduino.cc/en/Tutorial/Ping
-
-  This example code is in the public domain.
-*/
 
 int inches = 0;
 
 int cm = 0;
+/* variables anteriores corresponden al tipo globales */
+
 
 long readUltrasonicDistance(int triggerPin, int echoPin)
 {
@@ -36,12 +19,15 @@ long readUltrasonicDistance(int triggerPin, int echoPin)
   // Reads the echo pin, and returns the sound wave travel time in microseconds
   return pulseIn(echoPin, HIGH);
 }
+/* esta funcion es definida para funcionar en el sistema, siempre que sea llamada por su nombre asignado */
 
 void setup()
 {
   Serial.begin(9600);
+/* funcion usada para la inicializacion de la comunicacion lineal */
 
 }
+/* funcion que establece donde iran los comandos */
 
 void loop()
 {
@@ -55,3 +41,4 @@ void loop()
   Serial.println("cm");
   delay(100); // Wait for 100 millisecond(s)
 }
+/* funcion de bucle, comandos que se ejecutaran mientras este activa la placa */
